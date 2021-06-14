@@ -15,5 +15,5 @@ COPY . /app
 RUN npm run build --prod
 
 # Stage 2
-FROM nginx:latest
+FROM nginxinc/nginx-unprivileged
 COPY --from=build-step /app/dist/docker-angular-app /usr/share/nginx/html
